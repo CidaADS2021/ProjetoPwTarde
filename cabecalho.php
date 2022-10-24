@@ -31,7 +31,12 @@
         </a>
         </li>
 
-      
+        <li class="nav-item">
+          <a href="./usuarios.php" class="nav-link active" aria-current="page" >
+            Usuarios
+        </a>
+        </li>
+
 
       </ul>
       
