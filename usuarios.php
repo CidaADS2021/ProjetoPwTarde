@@ -33,6 +33,28 @@ $resultado = mysqli_query($conexao,$query);
     </div>
 </div>
 
+<?php
+if(isset($_GET["sucesso"]) && !empty($_GET["sucesso"]))
+{
+    ?>
+        <div class="alert alert-success">
+            <?php echo $_GET["sucesso"]; ?>
+        </div>
+    <?php
+
+}
+if(isset($_GET["erro"]) && !empty($_GET["erro"]))
+{
+    ?>
+            <div class="alert alert-danger">
+                Ocorreu algum erro no banco
+            </div>
+        <?php
+
+}
+
+?>
+
 <table class="table">
     <thead>
         <tr>
@@ -69,10 +91,10 @@ $resultado = mysqli_query($conexao,$query);
                         
                         ?></td>
                         <td>
-                            <a href="./usuariosEdit.php" class="btn btn-warning">
+                            <a href="./usuariosEdit.php?id=<?php echo $linha["id"];?>" class="btn btn-warning">
                             Editar
                             </a>
-                            <a href="./usuariosDelete.php" class="btn btn-danger">
+                            <a href="./usuariosDelete.php?id=<?php echo $linha["id"];?>" class="btn btn-danger">
                             Excluir
                             </a>
                         </td>
